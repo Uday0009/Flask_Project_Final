@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+Search Result
+{% endblock %}
+{% block content %}
+<br/>
+	<h2>You Searched For: <em>{{ searched }}</em></h2>
+	
+	<br/>
+	{% for t in L %}
+	<div class="shadow p-3 mb-5 bg-body rounded">
+	<h2>{{ t.tname }}</a></h2>
+	{{ t.location }}</small> <br/><br/>
+    <br>
+    <a href="{{ url_for('show_page',id=t.id) }}" class="btn btn-primary">View Movies</a>
+	<br/><br/>
+	
+</div>
+<br/>
+	{% endfor %}
+
+	
+
+
+    {% endblock %}

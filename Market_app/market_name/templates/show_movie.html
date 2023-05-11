@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}
+Search  Result
+{% endblock %}
+{% block content %}
+<br/>
+	<h2>You Searched For: <em>{{ searched }}</em></h2>
+	
+	<br/>
+
+
+
+	{% for s in show %}
+	<div class="shadow p-3 mb-5 bg-body rounded">
+	<h2>{{ s.sname }}</h2>
+    <br>
+	<h4>{{ s.theatre.tname }}</h4>
+
+    <br>
+    <h5>{{ s.theatre.location }}</h5>
+    <br>
+    <h6>Screen Number: {{ s.srno }}</h6>
+    <br>
+    <h6>Price: {{ s.price }}</h6>
+    <br>
+    <h6>No of Seats: {{ s.seatno }}</h6>
+    <br>
+    <a href="{{ url_for('book_page',id=s.id) }}" class="btn btn-primary">Book Now</a>
+	<br/><br/>
+	
+</div>
+<br/>
+	{% endfor %}
+
+	
+	
+
+    {% endblock %}
